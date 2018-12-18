@@ -11,7 +11,7 @@ RUN ["dnf", "-y", "install", "unzip"]
 RUN ["dnf", "clean", "all"]
 RUN ["rm", "-rf", "/var/cache/dnf"]
 ADD ${dlarc} ${arc}
-RUN unzip ${arc}
+RUN unzip -n ${arc}
 
 EXPOSE 19132/udp
 
