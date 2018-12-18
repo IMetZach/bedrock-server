@@ -1,0 +1,2 @@
+# MineCraft Bedrock Server
+---
