@@ -13,6 +13,9 @@ RUN ["rm", "-rf", "/var/cache/dnf"]
 ADD ${dlarc} ${arc}
 RUN unzip -n ${arc}
 
+ADD ./startup.sh /opt/minecraft/
+RUN ["chmod", "+x", "/opt/minecraft/startup.sh"]
+
 EXPOSE 19132/udp
 
-ENTRYPOINT ["LD_LIBRARY_PATH=. ./bedrock_server", "/bin/bash"]
+ENTRYPOINT ["/opt/minecraft/startup.sh", "/bin/bash"]
