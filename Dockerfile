@@ -14,10 +14,10 @@ RUN ["dnf", "clean", "all"]
 RUN ["rm", "-rf", "/var/cache/dnf"]
 RUN ["mkdir", "/opt/minecraft/worlds"]
 
-VOLUME ["/opt/minecraft/permissions.json"]
-VOLUME ["/opt/minecraft/server.properties"]
-VOLUME ["/opt/minecraft/whitelist.json"]
-VOLUME ["/opt/minecraft/worlds"]
+# VOLUME ["/opt/minecraft/permissions.json"]
+# VOLUME ["/opt/minecraft/server.properties"]
+# VOLUME ["/opt/minecraft/whitelist.json"]
+# VOLUME ["/opt/minecraft/worlds"]
 
 ADD ${dlarc} ${arc}
 RUN unzip -n ${arc}
@@ -25,7 +25,7 @@ RUN unzip -n ${arc}
 ADD ./startup.sh /opt/minecraft/
 RUN ["chmod", "+x", "/opt/minecraft/startup.sh"]
 
-EXPOSE 19132/udp
-EXPOSE 19132/tcp
+EXPOSE 19132
+EXPOSE 19133
 
 ENTRYPOINT ["/opt/minecraft/startup.sh", "/bin/bash"]
