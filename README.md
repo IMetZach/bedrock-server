@@ -27,3 +27,19 @@ Edit your config files and then start the server back up with:
 ```
 sudo docker start <container name>
 ```
+
+## Upgrading to a newer version:
+First you'll need to stop and remove your old container image. The container uses volumes for your world and config so you don't have to worry about loosing it:
+
+```
+sudo docker stop <container name>
+sudo docker container rm <container name>
+sudo docker image rm <image name>
+```
+
+now run the launcher script using the same server name as before. When the container starts up, it will already find the existing game folder with world, level, and config files. If your previous server was named "Billy", then y ou would do the follwoing:
+
+```
+./minecraft_launcher.sh Billy
+```
+
