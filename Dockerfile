@@ -1,4 +1,4 @@
-FROM fedora:29
+FROM fedora:30
 
 LABEL version="1.11.2.1"
 
@@ -8,10 +8,10 @@ ENV dlarc=https://minecraft.azureedge.net/bin-linux/${arc}
 
 WORKDIR /opt/minecraft
 
-RUN ["dnf", "-y", "upgrade"]
-RUN ["dnf", "-y", "install", "unzip" ]
-RUN ["dnf", "clean", "all"]
-RUN ["rm", "-rf", "/var/cache/dnf"]
+RUN ["dnf", "-y", "upgrade" && "dnf", "-y", "install", "unzip" && "dnf", "clean", "all" && "rm", "-rf", "/var/cache/dnf"]
+# RUN ["dnf", "-y", "install", "unzip"]
+# RUN ["dnf", "clean", "all"]
+# RUN ["rm", "-rf", "/var/cache/dnf"]
 RUN ["mkdir", "/opt/minecraft/worlds"]
 
 # VOLUME ["/opt/minecraft/permissions.json"]
