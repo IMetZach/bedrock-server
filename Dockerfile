@@ -8,7 +8,7 @@ ENV dlarc=https://minecraft.azureedge.net/bin-linux/${arc}
 
 WORKDIR /opt/minecraft
 
-RUN dnf -y upgrade & dnf -y install unzip && dnf clean all && rm -rf /var/cache/dnf
+RUN dnf -y upgrade && dnf -y install unzip && dnf clean all && rm -rf /var/cache/dnf
 # RUN ["dnf", "-y", "install", "unzip"]
 # RUN ["dnf", "clean", "all"]
 # RUN ["rm", "-rf", "/var/cache/dnf"]
