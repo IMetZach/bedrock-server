@@ -2,7 +2,7 @@ FROM fedora:30
 
 LABEL version="1.11.2.1"
 LABEL description="The MineCraft Bedrock Server"
-LABEL=maintainer="@IMetZach"
+LABEL=maintainer="\@IMetZach"
 
 ENV NAME Bedrock-Server
 ENV arc=bedrock-server-1.11.2.1.zip
