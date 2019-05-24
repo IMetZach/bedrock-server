@@ -10,7 +10,7 @@ Simply download the file minecraft_launcher.sh, edit the "base_dir" to where you
 sudo ./minecraft_launcher.sh <server name>
 ```
 
-Then on your server navigate to where ever you pointed the base_dir to and you'll see a folder named after your games and your cofig files in it. You can then do:
+Then on your server navigate to where ever you pointed the base_dir to and you'll see a folder named after your games and your config files in it. You can then do:
 
 ```
 sudo docker ps
@@ -37,7 +37,7 @@ sudo docker container rm <container name>
 sudo docker image rm <image name>
 ```
 
-now run the launcher script using the same server name as before. When the container starts up, it will already find the existing game folder with world, level, and config files. If your previous server was named "Billy", then y ou would do the follwoing:
+now run the launcher script using the same server name as before. When the container starts up, it will already find the existing game folder with world, level, and config files. If your previous server was named "Billy", then you would use the following:
 
 ```
 ./minecraft_launcher.sh Billy
