@@ -1,6 +1,6 @@
 # MineCraft Bedrock Server
 
-This is a docker container to launch and run the Official [Minecraft Bedrock Edition Server](https://minecraft.net/en-us/download/server/bedrock/) released my Microsoft and Mojang. It's vanilla and contains no add-ons or special server tools.
+This is a docker container to launch and run the Official [Minecraft Bedrock Edition Server](https://minecraft.net/en-us/download/server/bedrock/) released by Microsoft and Mojang. It's vanilla and contains no add-ons or special server tools.
 
 Getting started (TLDR):
 
