@@ -1,2 +1,4 @@
 # This script is to make it easier to launch the docker image on your server. It's not part of the image.
 minecraft_launcher.sh
+mc_launcher
+.vscode

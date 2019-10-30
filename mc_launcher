@@ -1,0 +1,45 @@
+#!/usr/bin/env python3
+
+import docker
+import os
+import sys
+
+# VARIABLES
+startMode = sys.argv[1]
+server = sys.argv[2]
+baseDir = "/var/games/"
+workDir = baseDir + server
+brImage = "imetzach/bedrock-server"
+sSet = ['permissions.json', 'server.properties', 'whitelist.json']
+
+# FUNCTIONS
+def mWork():        # Create settings folder
+    if not os.path.exists(workDir):
+        os.makedirs(workDir)
+        print("Creating settings folder " + workDir)
+    else:
+        print(workDir + " already exists.")
+
+def mSettings():    # Create settings files
+    for i in sSet[:]:
+        os.chdir(workDir)
+        if not os.path.exists(i):
+            setFile = open(i, 'w')
+            setFile.write('')
+            setFile.close()
+            print("Creating " + i)
+        else:
+            print("File " + i + " already exists")
+
+def mContainer():
+    client = docker.from_env()
+    client.containers.run(brImage, detach=True, volumes {workDir + 'permission.json': {'bind', '/opt/minecraft/permission.json', 'mode': 'rw,z'},
+                                                        })
+
+def chkMode(startMode): # Check the runtime argument. Is this a new server or an upgrade?
+    switcher = {
+        1 : "start",
+        2 : "upgrade"
+    }
+    print(switcher.get(server, "Usage: " + sys.argv[0] + " <start | upgrade> <server name>\n"))
+
