@@ -1,4 +1,4 @@
-FROM fedora:30
+FROM fedora:31
 
 LABEL version="1.14.21.0"
 LABEL description="The MineCraft Bedrock Server"
