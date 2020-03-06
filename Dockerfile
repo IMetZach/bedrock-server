@@ -1,6 +1,7 @@
 FROM fedora:31
 
 ENV release=1.14.32.1
+ENV DOCKER_TAG=${release}
 
 LABEL version="${release}"
 LABEL description="The MineCraft Bedrock Server"
