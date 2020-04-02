@@ -18,4 +18,4 @@ docker run -d -h ${server} --name=${server}\
  -v "${work_dir}/permissions.json:/opt/minecraft/permissions.json:z"\
  -v "${work_dir}/worlds:/opt/minecraft/worlds:z"\
  --network=host\
- imetzach/minecraft-bedrockserver
+ imetzach/bedrock-server
