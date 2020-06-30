@@ -23,9 +23,15 @@ docker start <container name>
 ```
 
 ## Upgrading to a newer version:
+Simply run to upgrade to a newer version:
+
 ```
 ./minecraft_launcher.sh --upgrade <server name>
 ```
+## Notes
+- There are many forks of this project but this is the original. 
+- This repo is fully automated.
+- When there is a new release, this repo will auto update and rebuild the image within 30 minutes.
 
 ## Related Links
 * [Docker Hub](https://hub.docker.com/repository/docker/imetzach/bedrock-server/general) - This container image on Docker Hub.
