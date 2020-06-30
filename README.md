@@ -10,19 +10,13 @@ Simply download the file minecraft_launcher.sh, edit the "base_dir" to where you
 ./minecraft_launcher.sh --start <server name>
 ```
 
-Then on your server navigate to where ever you pointed the base_dir to and you'll see a folder named after your games and your config files in it. You can then do:
+You will then need to edit your configuration files to your liking so first you'll need to stop the server:
 
 ```
-sudo docker ps
+docker stop <server name>
 ```
 
-to get the container name, which should be your server name and then do:
-
-```
-docker stop <container name>
-```
-
-Edit your config files and then start the server back up with:
+Edit your config files; the default location is ```/home/<user name>/local/games/minecraft/<server name>/``` and then start the server back up with:
 
 ```
 docker start <container name>

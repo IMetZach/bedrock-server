@@ -1,4 +1,7 @@
 #!/bin/bash
+# WHO: @imetzach
+# WHAT: Deploy a containerized server of Minecraft Bedrock Edition
+# WHERE: https://github.com/IMetZach/bedrock-server
 
 ################################
 ####        VARIABLES       ####
