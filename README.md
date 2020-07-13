@@ -28,6 +28,7 @@ Simply run to upgrade to a newer version:
 ```
 ./minecraft_launcher.sh --upgrade <server name>
 ```
+
 ## Notes
 - There are many forks of this project but this is the original. 
 - This repo is fully automated.
