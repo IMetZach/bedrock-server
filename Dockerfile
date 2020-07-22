@@ -1,6 +1,6 @@
 FROM fedora:32
 
-ENV release=1.16.1.02
+ENV release=
 ENV DOCKER_TAG=${release}
 
 LABEL version="${release}"
