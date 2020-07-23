@@ -1,4 +1,4 @@
-FROM fedora:32
+FROM fedora:latest
 
 ENV release=1.16.1.02
 ENV DOCKER_TAG=${release}

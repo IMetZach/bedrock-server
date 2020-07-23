@@ -9,7 +9,7 @@
 mode=$1
 server=$2
 server_image="docker.io/imetzach/bedrock-server:latest"
-base_dir="${HOME}/local/games/minecraft"
+base_dir="${HOME}/local/minecraft"
 work_dir="${base_dir}"/"${server}"
 
 ################################
@@ -24,7 +24,25 @@ if [ -d ${work_dir} ]
 	printf "Creating World Directory and Files\n"
 	mkdir -p "${work_dir}/worlds"
 	touch "${work_dir}"/whitelist.json
-	touch "${work_dir}"/server.properties
+	printf "gamemode=survival\n
+difficulty=normal\n
+level-type=default\n
+server-name=${server}\n
+max-players=10\n
+server-port=19132\n
+server-portv6=19133\n
+level-name=${server}\n
+level-seed=\n
+online-mode=true\n
+white-list=true\n
+allow-cheats=false\n
+view-distance=32\n
+player-idle-timeout=30\n
+max-threads=8\n
+tick-distance=4\n
+default-player-permission-level=member\n
+texturepack-required=false" >> "${work_dir}"/server.properties 
+
 	touch "${work_dir}"/permissions.json
 fi
 }
@@ -37,6 +55,7 @@ docker run -d -h ${server} --name=${server}\
  -v "${work_dir}/permissions.json:/opt/minecraft/permissions.json:z"\
  -v "${work_dir}/worlds:/opt/minecraft/worlds:z"\
  --network=host\
+ --label "io.containers.autoupdate=image"\
  ${server_image}
 }
 

@@ -4,23 +4,15 @@ This is a docker container to launch and run the Official [Minecraft Bedrock Edi
 
 ## Getting started (TLDR):
 
-Download the file minecraft_launcher.sh, edit the "base_dir" to where you'd like your server info stored and then run:
+* Download the file minecraft_launcher.sh  
+* Edit the "base_dir" to where you'd like your server info stored
+* Edit the server properties to your liking  
+* Run the following:
 
 ```
 ./minecraft_launcher.sh --start <server name>
 ```
 
-You'll want to edit your configuration files to your liking so first stop the server:
-
-```
-docker stop <server name>
-```
-
-Edit your config files: the default location is ```/home/<user name>/local/games/minecraft/<server name>/``` and then restart the server with:
-
-```
-docker start <container name>
-```
 
 ## Upgrading to a newer version:
 Simply run to upgrade to a newer version:
