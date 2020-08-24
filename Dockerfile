@@ -1,6 +1,6 @@
 FROM fedora:latest
 
-ENV release=1.16.20.03
+ENV release=
 ENV DOCKER_TAG=${release}
 
 LABEL version="${release}"
@@ -13,7 +13,7 @@ ENV dlarc=https://minecraft.azureedge.net/bin-linux/${arc}
 
 WORKDIR /opt/minecraft
 
-RUN dnf -y upgrade && dnf -y install unzip && dnf clean all && rm -rf /var/cache/dnf
+RUN dnf -y upgrade && dnf -y install unzip telnet && dnf clean all && rm -rf /var/cache/dnf
 RUN ["mkdir", "/opt/minecraft/worlds"]
 
 ADD ${dlarc} ${arc}
