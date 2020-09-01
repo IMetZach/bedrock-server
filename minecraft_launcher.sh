@@ -49,7 +49,7 @@ fi
 
 server_start(){
 # START THE CONTAINER
-docker run -d -h ${server} --name=${server}\
+docker create -d -h ${server} --name=${server} -it\
  -v "${work_dir}/whitelist.json:/opt/minecraft/whitelist.json:z"\
  -v "${work_dir}/server.properties:/opt/minecraft/server.properties:z"\
  -v "${work_dir}/permissions.json:/opt/minecraft/permissions.json:z"\
