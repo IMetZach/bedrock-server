@@ -13,7 +13,7 @@ ENV dlarc=https://minecraft.azureedge.net/bin-linux/${arc}
 
 WORKDIR /opt/minecraft
 
-RUN dnf -y upgrade && dnf -y install unzip telnet && dnf clean all && rm -rf /var/cache/dnf
+RUN dnf -y upgrade && dnf -y install unzip telnet libnsl && dnf clean all && rm -rf /var/cache/dnf
 RUN ["mkdir", "/opt/minecraft/worlds"]
 
 ADD ${dlarc} ${arc}
@@ -21,6 +21,7 @@ RUN unzip -n ${arc}
 
 ADD ./startup.sh /opt/minecraft/
 RUN ["chmod", "+x", "/opt/minecraft/startup.sh"]
+RUN ["chmod", "+x", "/opt/minecraft/bedrock_server"]
 
 EXPOSE 19132
 EXPOSE 19133
